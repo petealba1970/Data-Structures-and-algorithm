@@ -6,7 +6,8 @@ CHALLENGE 1
 
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 
------------------------------------------------------------------------------------------------- */
+----------------------------------------------------------------------
+-------------------------- */
 
 const appendTheEnd = (str) => {
  let text = $(str + 'the end.').html(text);
@@ -27,6 +28,10 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
+ let newLast = arr[0];
+  Array.slice(1);
+  arr.push(newLast);
+  
   appendFirstToLast(arr);
   console.log(arr)
 };
