@@ -10,8 +10,8 @@ Write a function that appends ' The end.' to a string, and returns the modified 
 -------------------------- */
 
 const appendTheEnd = (str) => {
- let text = $(str + 'the end.').html(text);
-  return text;
+ let text = str;
+  return text = text + ' the end.'
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,12 +28,8 @@ console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
 
 const appendFirstToLast = (arr) => {
- let newLast = arr[0];
-  Array.slice(1);
-  arr.push(newLast);
-  
-  appendFirstToLast(arr);
-  console.log(arr)
+ let newLast = arr[0]
+  arr.push(newLast)
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -52,7 +48,7 @@ console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
 
 const addBirthYearProperty = (obj, year) => {
-  
+  obj.yearborn = year  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -69,7 +65,9 @@ console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
 
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  for (let i=0; i < people.length; i++){
+  people[i].isAuthor = true;
+};
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,8 +86,10 @@ console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
 
 const append = (arr1, arr2) => {
-  // Solution code here...
-
+ for (let i=0; i < arr2.length;i++){
+   arr1.push(arr2[i])
+ };
+console.log(arr1)
 };
 
 /* ------------------------------------------------------------------------------------------------
