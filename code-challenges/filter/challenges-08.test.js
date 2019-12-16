@@ -30,8 +30,7 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 const filterStringsWithVowels = (arr) => {
   const wordswithVowels = arr.filter(word =>{
-   if (word === 'a' || word === 'e' || word === 'i' || word === 'o' || word === 'u'){
-      
+   if (word === 'a' || word === 'e' || word === 'i' || word === 'o' || word === 'u'){     
    }
  });
  return wordswithVowels;
