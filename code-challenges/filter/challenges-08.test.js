@@ -31,7 +31,13 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  const vowelArray = arr.filter(word =>{
+    let regex = /[aeiou]/
+    if (regex.test(word)){
+      return word
+    }
+  });
+  return vowelArray;
 };
 
 
@@ -44,7 +50,11 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  const uniqueArray = arr.filter(value =>{
+    if (!forbiddenValues.includes(value))
+    return value
+  })
+  return uniqueArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -87,7 +97,12 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // Solution code here...
+ const allStats = arr.filter(value =>{
+   if (value.baseStat > minBaseStat){
+     return value
+   }
+ })
+ return allStats;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,7 +114,16 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+  statName = filter.arr(value =>{
+    if (value.baseStat > minBaseStat){
+      return value
+    }
+  })
+  finalNames = [];
+  statName.forEach(value =>{
+    finalNames.push(value.stat.name);
+  })
+  return finalNames;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -152,7 +176,12 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
+  const noChild = arr.filter(value =>{
+    if (value.children === undefined){
+      return value
+    }
+  })
+  return noChild;
 };
 
 /* ------------------------------------------------------------------------------------------------
