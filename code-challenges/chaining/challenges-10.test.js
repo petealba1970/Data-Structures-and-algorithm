@@ -11,7 +11,15 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
+    let howMany = input.reduce((accumulator, value, index) =>{
+        for (let i = 0; i < value.length; i++){
+            if (target === value[i]){
+                accumulator = accumulator + 1;
+            }            
+        }
+        return accumulator;
+    }, 0);
+    return howMany;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -25,7 +33,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+      let total = 0;
+      for (let i = 0; i < input.length; i++){
+          for (let j = 0; j < input[i].length; j++){
+        total = total + input[i][j];
+         }           
+      }  
+      return total;  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -41,7 +55,17 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  let finalArray = [];
+for (let j = 0; j < input.length;j++){
+    finalArray.push([]);
+for (let k = 0; k < input[j].length;k++){
+if ((typeof(input[j][k]) === "number") && input[j][k]%5 === 0){
+let powerTwo = input[j][k]*input[j][k];
+    finalArray.push(powerTwo);
+  }
+ }
+}
+ return finalArray;  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,9 +131,23 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+let genderArray = data.reduce((accumulator, value, index) =>{
+if (value.gender === 'male' || value.gender === 'female' ){
+    accumulator.push(value.name);
+}
+return accumulator
+}, []);
+ let joined = ''
+for (let i =0; i < genderArray.length; i++){
+    if (i < genderArray.length-1){
+     joined = joined + genderArray[i] + ' and '
+    }
+    else {
+        joined = joined + genderArray[i];
+    }
+}
+return joined;
 };
-
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -117,7 +155,13 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  let shorty = data.reduce((accumulator, value, index)=>{
+      if (value.height > accumulator.height){
+          accumulator = value.name;
+      }
+      return accumulator;
+  },starWarsData[0]);
+  return shorty;
 };
 
 /* ------------------------------------------------------------------------------------------------
